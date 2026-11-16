@@ -98,9 +98,19 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -6% 0px" }
     );
-    revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    revealEls.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      // Anything already on screen at load appears immediately.
+      if (rect.top < viewportHeight * 0.96 && rect.bottom > 0) {
+        el.classList.add("is-visible");
+      } else {
+        revealObserver.observe(el);
+      }
+    });
   }
 
   /* ---------- Number count-up in the stat strip ---------- */

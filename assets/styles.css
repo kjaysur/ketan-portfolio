@@ -1052,11 +1052,10 @@ p{ margin:0; }
 /* ============================ REVEAL ============================ */
 
 .reveal{
-  opacity:0;
-  transform:translateY(22px);
   transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
   will-change:opacity, transform;
 }
+.js .reveal{ opacity:0; transform:translateY(22px); }
 .reveal.is-visible{ opacity:1; transform:none; }
 
 /* ============================ RESPONSIVE ============================ */
@@ -1312,5 +1311,5 @@ p{ margin:0; }
     animation-iteration-count:1 !important;
     transition-duration:.001ms !important;
   }
-  .reveal{ opacity:1; transform:none; }
+  .js .reveal{ opacity:1; transform:none; }
 }
