@@ -9,7 +9,7 @@ No build tools, no frameworks, no internet connection required.
 
 ```
 index.html              The website (all content lives here)
-Ketan-Jaysur-CV.pdf     Two-page CV generated from the same content
+Ketan-Jaysur-CV.pdf     Three-page CV generated from the same content
 robots.txt              Lets search engines index the site when hosted
 assets/
   styles.css            All styling, responsive layout and print styles

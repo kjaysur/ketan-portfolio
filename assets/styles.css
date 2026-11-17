@@ -549,6 +549,15 @@ p{ margin:0; }
   letter-spacing:-.03em;
 }
 
+.section-intro{
+  max-width:78ch;
+  margin:-24px 0 32px;
+  color:var(--muted);
+  font-size:14.8px;
+  line-height:1.68;
+}
+.section-intro strong{ color:var(--text); font-weight:600; }
+
 /* About */
 .about-grid{
   display:grid;
@@ -696,7 +705,7 @@ p{ margin:0; }
 /* Highlights */
 .highlight-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:16px;
 }
 .highlight{
@@ -943,6 +952,42 @@ p{ margin:0; }
 .cert-list strong{ display:block; font-size:13.8px; font-weight:600; line-height:1.45; }
 .cert-list span{ display:block; font-size:12.2px; color:var(--muted-dim); margin-top:2px; }
 
+/* Grouped certifications */
+.cert-block{ margin-top:48px; }
+.cert-head{ margin-bottom:18px; }
+.cert-head .cred-title{ margin-bottom:6px; }
+.cert-count{ font-size:12.5px; color:var(--muted-dim); }
+
+.cert-groups{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:16px;
+}
+.cert-group{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 24px;
+}
+.cert-group h4{
+  font-size:11.5px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--accent);
+  font-weight:600;
+  margin-bottom:8px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+.cert-group .cert-list li{
+  padding:8px 0;
+  gap:11px;
+}
+.cert-group .cert-list li:first-child{ padding-top:2px; }
+.cert-group .cert-list strong{ font-size:13.2px; }
+.cert-group .cert-list span{ font-size:11.6px; }
+.cert-group .cert-dot{ margin-top:6px; }
+
 /* Contact */
 .contact{ padding-bottom:104px; }
 .contact-card{
@@ -1108,6 +1153,7 @@ p{ margin:0; }
   .skill-grid{ grid-template-columns:1fr; }
   .auto-grid{ grid-template-columns:1fr; }
   .cred-grid{ grid-template-columns:1fr; }
+  .cert-groups{ grid-template-columns:1fr; }
   .tl-top{ flex-direction:column; gap:8px; }
   .contact-card{ padding:36px 24px; }
 }
@@ -1203,6 +1249,7 @@ p{ margin:0; }
   .section-head{ margin-bottom:5pt; max-width:none; break-after:avoid; }
   .section-head h2{ font-size:12.4pt; letter-spacing:-.02em; }
   .kicker{ display:none; }
+  .section-intro{ display:none !important; }
 
   .about-grid{ display:block; }
   .about-copy p{ font-size:9pt; margin-bottom:4pt; color:#344054; }
@@ -1221,7 +1268,7 @@ p{ margin:0; }
   .skill-card p, .auto-card p, .highlight p{ font-size:8.4pt; line-height:1.36; color:#344054; }
 
   .highlight-grid{
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(3, 1fr);
     gap:0;
     border-top:1px solid #d0d5dd;
     border-bottom:1px solid #d0d5dd;
@@ -1235,6 +1282,7 @@ p{ margin:0; }
     break-inside:avoid;
   }
   .highlight:first-child{ border-left:0; padding-left:0; }
+  .highlight:nth-child(3n+1){ border-left:0; padding-left:0; }
   .highlight p:not(.hi-metric){ display:none; }
   .hi-metric{
     font-size:12pt;
@@ -1277,7 +1325,30 @@ p{ margin:0; }
   .tl-list li{ font-size:8.5pt; line-height:1.34; color:#344054; padding-left:9pt; }
   .tl-list li::before{ top:6pt; width:3.5pt; height:3.5pt; background:#0f766e; }
 
-  .auto-grid{ grid-template-columns:repeat(3, 1fr); gap:5pt; }
+  .auto-grid{ display:none !important; }
+  .lab-list{
+    list-style:none;
+    margin:2pt 0 0;
+    padding:0;
+    display:grid;
+    gap:1.5pt;
+  }
+  .lab-list li{
+    position:relative;
+    padding-left:9pt;
+    font-size:8.5pt;
+    line-height:1.34;
+    color:#344054;
+  }
+  .lab-list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:5.5pt;
+    width:3.5pt; height:3.5pt;
+    border-radius:50%;
+    background:#0f766e;
+  }
 
   .cred-grid{ grid-template-columns:1fr 1fr; gap:12pt; }
   .cred-title{
@@ -1298,6 +1369,16 @@ p{ margin:0; }
   .cert-list li{ break-inside:avoid; padding:1.5pt 0; border-bottom:1px solid #e4e7ec; }
   .cert-list strong{ font-size:8.4pt; line-height:1.3; }
   .cert-list span{ font-size:7.7pt; margin-top:0; line-height:1.3; }
+
+  .cert-block{ margin-top:7pt; }
+  .cert-head{ margin-bottom:3pt; }
+  .cert-count{ font-size:7.8pt; }
+  .cert-groups{ grid-template-columns:1fr 1fr; gap:6pt; }
+  .cert-group{ padding:4.5pt 7pt; break-inside:avoid; }
+  .cert-group h4{ font-size:8.2pt; margin-bottom:2pt; padding-bottom:2pt; }
+  .cert-group .cert-list li{ padding:2pt 0; }
+  .cert-group .cert-list strong{ font-size:8.4pt; }
+  .cert-group .cert-list span{ font-size:7.8pt; }
 
   a{ color:inherit; text-decoration:none; }
 }
